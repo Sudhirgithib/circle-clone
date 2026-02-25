@@ -41,6 +41,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
+      - checkout
       - add_ssh_keys:
           fingerprints:
             - "SHA256:5P6JK74PEOzVt3dco21PcW7MFIU47fGI7fn6YlbDV9g"
