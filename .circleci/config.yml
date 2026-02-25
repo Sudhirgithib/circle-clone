@@ -55,7 +55,7 @@ jobs:
   #             npm install --prefix frontend &&
   #             pip install -r backend/requirements.txt &&
   #             sudo systemctl restart blog-app
-            "
+            
 
 workflows:
   ci_cd_pipeline:
