@@ -47,12 +47,15 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh -o StrictHostKeyChecking=no ec2-user@$100.53.189.58"
+            ssh -o StrictHostKeyChecking=no ec2-user@100.53.189.58 "
               if [ ! -d /home/ec2-user/blog-app ]; then
                 git clone https://github.com/Sudhirgithib/circle-clone.git /home/ec2-user/blog-app
               fi &&
               cd /home/ec2-user/blog-app && git pull origin main &&
-              npm install --prefix fron
+              npm install --prefix frontend &&
+              pip install -r backend/requirements.txt &&
+              sudo systemctl restart blog-app
+            "
             
 
 workflows:
