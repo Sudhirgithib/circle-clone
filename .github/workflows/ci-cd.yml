@@ -56,8 +56,8 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
+          host: 35.172.201.20
+          username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             if [ ! -d /home/ec2-user/blog-app ]; then
