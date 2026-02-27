@@ -1,13 +1,19 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
+console.log("🔥 DATABASE CONFIG FILE LOADED 🔥");
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: false, // Disable SSL for local PostgreSQL on EC2
+  user: 'contentuser',
+  host: '127.0.0.1',
+  database: 'contenthub',
+  password: 'yourpassword',
+  port: 5432,
+  ssl: false
 });
 
 pool.on('connect', () => {
-  console.log('Connected to PostgreSQL database');
+  console.log('✅ Connected to PostgreSQL database');
 });
 
 pool.on('error', (err) => {
