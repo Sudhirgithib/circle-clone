@@ -39,7 +39,7 @@ jobs:
       - run:
           name: Deploy to EC2
           command: |
-            ssh -o StrictHostKeyChecking=no ec2-user@35.172.201.20 "
+            ssh -o StrictHostKeyChecking=no ec2-user@18.206.172.148 "
               if [ ! -d /home/ec2-user/blog-app ]; then
                 git clone https://github.com/Sudhirgithib/circle-clone.git /home/ec2-user/blog-app
               fi &&
